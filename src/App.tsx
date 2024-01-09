@@ -1,14 +1,25 @@
-import { useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [text, setText] = useState('');
+
+  const handleInput = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    const text = event.target.value;
+    setText(text);
+    localStorage.setItem('notepad-text', text);
+  };
+
+  useEffect(() => {
+    const text = localStorage.getItem('notepad-text');
+    if (text) {
+      setText(text);
+    }
+  }, []);
 
   return (
     <>
-      <div className="card">
-        <button onClick={() => setCount(count => count + 1)}>count is {count}</button>
-      </div>
+      <textarea value={text} onInput={handleInput}></textarea>
     </>
   );
 }
