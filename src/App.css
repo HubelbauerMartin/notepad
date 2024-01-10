@@ -1,13 +1,32 @@
+html {
+  display: flex;
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: 0;
+  overflow: hidden;
+}
+
 #root {
-  width: 80ch;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1ch;
+  margin: 1ch;
+}
+
+h1 {
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
 textarea {
-  height: 90vh;
+  flex: 1;
+  font-size: 200%;
   outline: none;
   resize: none;
-  width: 100%;
+  width: 60ch;
 }
