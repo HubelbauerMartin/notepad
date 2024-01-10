@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <h1>Notepad 🗒️</h1>
-      <textarea value={text} onInput={handleInput}></textarea>
+      <textarea value={text} onInput={handleInput} spellCheck="false"></textarea>
     </>
   );
 }
